@@ -37,6 +37,8 @@
                  manager: (CBLManager*)manager
                    error: (NSError**)error;
 
+- (BOOL) runStatements: (NSString*)statements error: (NSError**)outError;
+
 /** Closes storage before it's deallocated. */
 - (void) close;
 

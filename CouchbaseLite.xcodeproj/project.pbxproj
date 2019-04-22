@@ -1402,13 +1402,6 @@
 			remoteGlobalIDString = 27E66A571A7305B10091DA3F;
 			remoteInfo = "CBL SQLite Storage";
 		};
-		27E66B4C1A73082E0091DA3F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 27E66AD01A7307590091DA3F;
-			remoteInfo = "CBL ForestDB Storage";
-		};
 		27F1B0051A84160E0056DA1E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
@@ -4240,6 +4233,7 @@
 				27731F141495CFEF00815D67 /* Sources */,
 				27731F1D1495CFEF00815D67 /* Frameworks */,
 				27731F231495CFEF00815D67 /* Resources */,
+				C062F1B822662D7000D7C267 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -4285,7 +4279,6 @@
 			dependencies = (
 				27452BB21AB1167300327776 /* PBXTargetDependency */,
 				27E66B4B1A73082E0091DA3F /* PBXTargetDependency */,
-				27E66B4D1A73082E0091DA3F /* PBXTargetDependency */,
 			);
 			name = "CBL iOS";
 			productName = iTouchDB;
@@ -4454,19 +4447,19 @@
 					};
 					27452BB71AB1180800327776 = {
 						CreatedOnToolsVersion = 6.3;
-						DevelopmentTeam = N2Q372V7W2;
+						DevelopmentTeam = WTBM48M37M;
 					};
 					275315D414ACF0A10065964D = {
-						DevelopmentTeam = N2Q372V7W2;
+						DevelopmentTeam = WTBM48M37M;
 					};
 					27538F4F17F13B03004C3BFD = {
-						DevelopmentTeam = N2Q372V7W2;
+						DevelopmentTeam = WTBM48M37M;
 					};
 					27731F131495CFEF00815D67 = {
-						DevelopmentTeam = N2Q372V7W2;
+						DevelopmentTeam = HA9MF4592S;
 					};
 					27B0B80A1492C16300A817AD = {
-						DevelopmentTeam = N2Q372V7W2;
+						DevelopmentTeam = WTBM48M37M;
 						SystemCapabilities = {
 							com.apple.DataProtection = {
 								enabled = 1;
@@ -4483,6 +4476,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -4809,7 +4803,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "source \"$SCRIPT_INPUT_FILE_0\"";
+			shellScript = "source \"$SCRIPT_INPUT_FILE_0\"\n";
 		};
 		27B0B8061492BE2100A817AD /* Copy Library */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -4823,7 +4817,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp \"${UNIVERSAL_BUILD_DIR}/libCouchbaseLiteFat.a\" \"${CONFIGURATION_BUILD_DIR}/${EXECUTABLE_PATH}\"";
+			shellScript = "cp \"${UNIVERSAL_BUILD_DIR}/libCouchbaseLiteFat.a\" \"${CONFIGURATION_BUILD_DIR}/${EXECUTABLE_PATH}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		27E66ACB1A7305B10091DA3F /* Build Fat Library */ = {
@@ -4904,6 +4898,23 @@
 			shellPath = /bin/sh;
 			shellScript = "source \"$SCRIPT_INPUT_FILE_0\"";
 			showEnvVarsInLog = 0;
+		};
+		C062F1B822662D7000D7C267 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
 		};
 		DA023B6014BCA94C008184BB /* Build Fat Library */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -5755,11 +5766,6 @@
 			target = 27E66A571A7305B10091DA3F /* CBL SQLite Storage */;
 			targetProxy = 27E66B4A1A73082E0091DA3F /* PBXContainerItemProxy */;
 		};
-		27E66B4D1A73082E0091DA3F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 27E66AD01A7307590091DA3F /* CBL ForestDB Storage */;
-			targetProxy = 27E66B4C1A73082E0091DA3F /* PBXContainerItemProxy */;
-		};
 		27F1B0061A84160E0056DA1E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 27E66A571A7305B10091DA3F /* CBL SQLite Storage */;
@@ -6024,6 +6030,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 27FFFF0F1C973FB5001A70FC /* iOS Empty App_Debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = HA9MF4592S;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.couchbase.Couchbase-Lite-Jn";
+				VALID_ARCHS = "armv7 armv7s arm64 x86_64";
 			};
 			name = Debug;
 		};
@@ -6031,6 +6041,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 27FFFF101C973FB5001A70FC /* iOS Empty App_Release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = HA9MF4592S;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.couchbase.Couchbase-Lite-Jn";
+				VALID_ARCHS = "armv7 armv7s arm64 x86_64";
 			};
 			name = Release;
 		};

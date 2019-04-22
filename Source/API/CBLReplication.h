@@ -169,6 +169,8 @@ typedef void (^CBLAttachmentProgressBlock)(uint64_t bytesRead,
     Has no effect if the replication is not running. */
 - (void) restart;
 
+- (NSString*) remoteCheckpointDocID;
+
 /** Suspends/resumes a replication.
     On iOS a replication will suspend itself when the app goes into the background, and resume
     when the app is re-activated. If your app receives a push notification while suspended and needs

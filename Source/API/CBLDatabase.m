@@ -311,6 +311,9 @@ static void catchInBlock(void (^block)()) {
     return [action run: outError];
 }
 
+- (BOOL) runStatements: (NSString*)statements error: (NSError**)outError {
+    return [_storage runStatements:statements  error:outError];
+}
 
 #pragma mark - DOCUMENTS:
 

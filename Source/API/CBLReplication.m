@@ -61,6 +61,7 @@ NSString* CBL_ReplicatorStoppedNotification = @"CBL_ReplicatorStopped";
     SequenceNumber _lastSequencePushed;     // The latest sequence pushed by the replicator
     NSSet* _pendingDocIDs;                  // Cached set of docIDs awaiting push
     SequenceNumber _pendingDocIDsSequence;  // DB lastSequenceNumber when _pendingDocIDs was set
+    NSString* _remoteCheckpointDocID;
 
     // ONLY used on the server thread:
     id<CBL_Replicator> _bg_replicator;
@@ -533,6 +534,14 @@ NSString* CBL_ReplicatorStoppedNotification = @"CBL_ReplicatorStopped";
     return settings;
 }
 
+// #here#
+- (NSString*) remoteCheckpointDocID {
+    if (!_remoteCheckpointDocID) {
+        CBL_ReplicatorSettings* settings = self.replicatorSettings;
+        _remoteCheckpointDocID = [settings remoteCheckpointDocIDForLocalUUID:_database.privateUUID];
+    }
+    return _remoteCheckpointDocID;
+}
 
 - (SInt64) lastSequencePushed {
     if (_pull)

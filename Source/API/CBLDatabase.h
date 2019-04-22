@@ -99,6 +99,8 @@ typedef BOOL (^CBLFilterBlock) (CBLSavedRevision* revision, NSDictionary* __null
 - (BOOL) changeEncryptionKey: (nullable id)keyOrPassword
                        error: (NSError**)error;
 
+- (BOOL) runStatements: (NSString*)statements error: (NSError**)outError;
+
 #pragma mark - DOCUMENT ACCESS:
 
 /** Instantiates a CBLDocument object with the given ID.
